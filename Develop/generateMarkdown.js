@@ -1,8 +1,11 @@
+// this generates the template for the readme file using markdowns to designate what goes where
 
-    #blarg
+function generateMarkDown(data) {
+    return `
+    #${data.title}
 
     ## Description
-    blarg
+    ${data.description}
 
     ## Table of Contents
         * [Installation](#installation)
@@ -14,23 +17,26 @@
 
     ---
     ## Installation
-    Installation instructions: blarg
+    Installation instructions: ${data.installation}
     ---
     ## Usage
-    blarg
+    ${data.usage}
     ---
     ## Credits
     Credit to outside third party sources used in development: 
-    blarg
+    ${data.credits}
     ---
     ## Tests
-    blarg 
+    ${data.tests} 
     ---
     ## Features
-    blarg
+    ${data.features}
     ---
     ## License
-    License used for this project: blarg
+    License used for this project: ${data.license}
     ---
 
-    
+    `;   
+}
+
+module.exports = generateMarkDown;
